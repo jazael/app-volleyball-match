@@ -1,0 +1,25 @@
+.welcome {
+  text-align: center;
+}
+
+.example-card {
+max-width: 500px;
+}
+
+.example-header-image {
+background-size: cover;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-form .button-init {
+  margin-top: 30px;
+}
+
+.example-full-width {
+  width: 100%;
+}

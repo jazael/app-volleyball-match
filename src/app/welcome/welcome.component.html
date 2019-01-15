@@ -1,0 +1,36 @@
+<div class="welcome" fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
+  <section>
+    <h1>INICIAR JUEGO YA!</h1>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+      </mat-card-header>
+      <img mat-card-md-image src="assets/images/volleyball-match.jpg" alt="Iniciar partido de volleyball">
+      <mat-card-content>
+        <form class="example-form" [formGroup]="welcomeForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="teamone" placeholder="Equipo 1">
+            <mat-hint>Por favor, introduzca el nombre del equipo numero 1.</mat-hint>
+            <mat-error *ngIf="f.teamone?.errors?.required">Falta el nombre del equipo numero 1.</mat-error>
+            <mat-error *ngIf="f.teamone?.errors?.minlength">Tiene que tener al menos 10 caracteres de largo.</mat-error>
+            <mat-error *ngIf="f.teamone?.errors?.maxlength">Tiene que tener como maximo 30 caracteres de largo.</mat-error>
+          </mat-form-field>
+          <br>
+          <br>
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="teamtwo" placeholder="Equipo 2">
+            <mat-hint>Por favor, introduzca el nombre del equipo numero 2.</mat-hint>
+            <mat-error *ngIf="f.teamtwo?.errors?.required">Falta el nombre del equipo numero 2.</mat-error>
+            <mat-error *ngIf="f.teamtwo?.errors?.minlength">Tiene que tener al menos 10 caracteres de largo.</mat-error>
+            <mat-error *ngIf="f.teamtwo?.errors?.maxlength">Tiene que tener como maximo 30 caracteres de largo.</mat-error>
+          </mat-form-field>
+
+          <button class="button-init" *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="welcomeForm.invalid">Iniciar juego</button>
+          <mat-spinner style="margin:0 auto;" *ngIf="isLoading"></mat-spinner>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</div>

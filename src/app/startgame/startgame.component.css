@@ -1,0 +1,16 @@
+.cardList {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardList > *:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.marker {
+  margin: 20px;
+  display: block;
+  padding: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
